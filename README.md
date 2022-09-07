@@ -52,7 +52,7 @@ TBD-welcome-paragraph
 -->
 
 <details id=1>
-<summary><h2>Step 1: TBD-step-1-name</h2></summary>
+<summary><h2>Step 1: Make a workflow reusable</h2></summary>
 
 _Welcome to "TBD-course-name"! :wave:_
 
@@ -76,7 +76,7 @@ TBD-step-1-information
 -->
 
 <details id=2>
-<summary><h2>Step 2: TBD-step-2-name</h2></summary>
+<summary><h2>Step 2: Add a job to call the resuable workflow</h2></summary>
 
 _You did TBD-step-1-name! :tada:_
 
@@ -99,7 +99,7 @@ TBD-step-2-information
 -->
 
 <details id=3>
-<summary><h2>Step 3: TBD-step-3-name</h2></summary>
+<summary><h2>Step 3: Add a matrix strategy to your workflow</h2></summary>
 
 _Nice work finishing TBD-step-2-name :sparkles:_
 
@@ -122,7 +122,7 @@ TBD-step-3-information
 -->
 
 <details id=4>
-<summary><h2>Step 4: TBD-step-4-name</h2></summary>
+<summary><h2>Step 4: Trigger the workflow that calls the reusable workflow</h2></summary>
 
 _Nicely done TBD-step-3-name! :partying_face:_
 
@@ -145,7 +145,7 @@ TBD-step-4-information
 -->
 
 <details id=5>
-<summary><h2>Step 5: Merge your pull request</h2></summary>
+<summary><h2>Step 5: Make your workflows accessible across your organization</h2></summary>
 
 _Almost there TBD-step-4-name! :heart:_
 
