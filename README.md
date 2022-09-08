@@ -138,7 +138,7 @@ The step within the `build` job uses an action called `checkout@v3` to checkout 
   
 Okay, now that we know what the reusable workflow is doing, let's now add a new job to another workflow called **my-starter-workflow** to call our reusable workflow. We can do this by using the `uses:` command and then setting the path to the workflow we want to use. We also need to make sure we define that node input or the reusable workflow won't work.
 
-### :keyboard: Activity: Add a job to your workflow to call the reusable workflow. To do this, let's cre
+### :keyboard: Activity: Add a job to your workflow to call the reusable workflow
 
 1. Navigate to the `.github/workflows/` folder and open the `my-starter-workflow.yml` file.
 1. Add a new job to the workflow called `call-reusable-workflow`.
