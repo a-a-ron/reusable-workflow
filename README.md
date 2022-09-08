@@ -217,11 +217,11 @@ Let's add a matrix strategy to the **My Starter Workflow** so we can run our job
 <details id=4>
 <summary><h2>Step 4: Merge your changes</h2></summary>
 
-_Nicely done TBD-step-3-name! :partying_face:_
+_Nicely done! :partying_face:_
 
-TBD-step-4-information
+You've added a matrix strategy to your workflow file that is now running on four different versions of node `[14, 16, 18, 20]` instead of the single hard-coded version of only `14`. 
 
-You can now [merge](https://docs.github.com/en/get-started/quickstart/github-glossary#merge) your pull request!
+You may not have noticed yet, but I've opened up a pull request called **Reusable workflow example** that is linked to the branch you've been making your file changes to (**reusable-workflow**). Let's navigate to this pull request and merge it so that your workflow file changes will be part of the `main` branch.
 
 ### :keyboard: Activity 1 : Create and merge your pull request
 
