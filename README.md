@@ -244,15 +244,23 @@ You may not have noticed yet, but I've opened up a pull request called **Reusabl
 <details id=5>
 <summary><h2>Step 5: Trigger your workflow and view the Actions logs</h2></summary>
 
-_Almost there TBD-step-4-name! :heart:_
+_You're almost done. Last step! :heart:_
+  
+Now that the changes have been merged into the `main` branch, let's trigger the **My Starter Workflow** workflow to see everyting in action! But before we do, let's recall what we should expect to see before we run the workflow. 
+  - We should expect to see five jobs running from our *My Starter Workflow**. Do you remember which ones? We have the `build` job and then the `call-reusable-workflow` job that has the matrix strategy.
+    ![Screen Shot 2022-09-08 at 9 53 52 AM](https://user-images.githubusercontent.com/6351798/189220189-97361a5e-eecf-4666-a859-e0587354bafe.png)
+  - We should also expect to see the echo message printed as an output from the reusable workflow with the node version for each of the matrix version jobs. 
+    ![Screen Shot 2022-09-08 at 9 52 41 AM](https://user-images.githubusercontent.com/6351798/189220620-0576540a-366f-44e1-866c-2955af399cdb.png)
 
-### :keyboard: Activity 2 : Run the My Starter Workflow
+### :keyboard: Activity 2 : Run the My Starter Workflow and view the Actions logs
 
 1. Navigate to the **Actions** tab in your repo.
 1. Choose the **My Starter Workflow** workflow from the left, and select the **Run workflow** button and run the workflow on the **Main** branch.
 1. Refresh the page and then select the **My Starter Workflow** from the workflow runs queue.
 
 Notice the list of build jobs on the left. One for the `build` job and four for the different node versions (14, 16, 18, 20) that you are running from your matrix. When one of the node version jobs complete, you can select that job and view the Actions logs for the **Output the input value**. This will print out the message from the reusable workflow file.
+
+
 
 </details>
 
@@ -264,20 +272,24 @@ Notice the list of build jobs on the left. One for the `build` job and four for 
 <details id=X>
 <summary><h2>Finish</h2></summary>
 
-_Congratulations friend, you've completed this course!_
+_Congratulations friend, you've completed this course!_ 🎉
 
-<img src=TBD-celebrate-image alt=celebrate width=300 align=right>
+<img src="https://octodex.github.com/images/skatetocat.png" alt=celebrate width=300 align=right>
 
 Here's a recap of all the tasks you've accomplished in your repository:
 
-- Steps to share your workflows with your organization
-
+- You made a workflow reusable by using the `workflow_call` event trigger
+- You created a new job in a separate workflow to call the reusable workflow
+- You added a matrix strategy to run a job on multiple node versions
+- You navigated through the Actions logs to view the workflow runs and results from specific jobs
+ 
 ### What's next?
 
-- TBD-continue.
-- [We'd love to hear what you thought of this course](TBD-feedback-link).
-- [Take another TBD-organization Course](https://github.com/TBD-organization).
-- [Read the GitHub Getting Started docs](https://docs.github.com/en/get-started).
+- Learn more about GitHub Actions by reading "[Learn GitHub Actions](https://docs.github.com/actions/learn-github-actions)".
+- Use actions created by others in [awesome-actions](https://github.com/sdras/awesome-actions).
+- We'd love to hear what you thought of this course [in our discussion board](https://github.com/skills/.github/discussions).
+- [Take another GitHub Skills course](https://github.com/skills).
+- Learn more about GitHub by reading the "[Get started](https://docs.github.com/get-started)" docs.
 - To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
 
 </details>
