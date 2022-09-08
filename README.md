@@ -7,9 +7,9 @@
   Add your open source license, GitHub uses Creative Commons Attribution 4.0 International.
 -->
 
-# TBD-course-name
+# Reusable Workflows and Matrix Strategies
 
-_TBD-course-description_
+_Make a workflow reusable, call it in another workflow, and use a matrix strategy to run multiple versions_
 
 <!--
   <<< Author notes: Start of the course >>>
@@ -162,13 +162,13 @@ TBD-step-3-information
 -->
 
 <details id=4>
-<summary><h2>Step 4: Merge your changes and trigger the workflow</h2></summary>
+<summary><h2>Step 4: Merge your changes</h2></summary>
 
 _Nicely done TBD-step-3-name! :partying_face:_
 
 TBD-step-4-information
 
-**What is _TBD-term-4_**: TBD-definition-4
+You can now [merge](https://docs.github.com/en/get-started/quickstart/github-glossary#merge) your pull request!
 
 ### :keyboard: Activity 1 : Create and merge your pull request
 
@@ -176,14 +176,8 @@ TBD-step-4-information
 1. Click on the **Post welcome comment workflow** pull request.
 1. Click **Merge pull request**, then click **Confirm merge**.
 1. Optionally, click **Delete branch** to delete your `reusable-workflow` branch.
+1. Wait about 20 seconds for actions to run, then refresh this page (the one you're following instructions from) and an action will automatically close this step and open the next one.
 
-### :keyboard: Activity 2 : Run the My Starter Workflow
-
-1. Navigate to the **Actions** tab in your repo.
-1. Choose the **My Starter Workflow** workflow from the left, and select the **Run workflow** button and run the workflow on the **Main** branch.
-1. Refresh the page and then select the **My Starter Workflow** from the workflow runs queue.
-
-Notice the list of build jobs on the left. One for the `build` job and four for the different node versions (14, 16, 18, 20) that you are running from your matrix. When one of the node version jobs complete, you can select that job and view the Actions logs for the **Output the input value**. This will print out the message from the reusable workflow file.
 
 </details>
 
@@ -195,17 +189,17 @@ Notice the list of build jobs on the left. One for the `build` job and four for 
 -->
 
 <details id=5>
-<summary><h2>Step 5: Make your workflows accessible across your organization</h2></summary>
+<summary><h2>Step 5: Trigger your workflow and view the Actions logs</h2></summary>
 
 _Almost there TBD-step-4-name! :heart:_
 
-You can now [merge](https://docs.github.com/en/get-started/quickstart/github-glossary#merge) your pull request!
+### :keyboard: Activity 2 : Run the My Starter Workflow
 
-### :keyboard: Activity: Merge your pull request
+1. Navigate to the **Actions** tab in your repo.
+1. Choose the **My Starter Workflow** workflow from the left, and select the **Run workflow** button and run the workflow on the **Main** branch.
+1. Refresh the page and then select the **My Starter Workflow** from the workflow runs queue.
 
-1. Click **Merge pull request**.
-1. Delete the branch `TBD-branch-name` (optional).
-1. Wait about 20 seconds then refresh this page for the next step.
+Notice the list of build jobs on the left. One for the `build` job and four for the different node versions (14, 16, 18, 20) that you are running from your matrix. When one of the node version jobs complete, you can select that job and view the Actions logs for the **Output the input value**. This will print out the message from the reusable workflow file.
 
 </details>
 
@@ -223,7 +217,7 @@ _Congratulations friend, you've completed this course!_
 
 Here's a recap of all the tasks you've accomplished in your repository:
 
-- TBD-recap.
+- Steps to share your workflows with your organization
 
 ### What's next?
 
