@@ -1,4 +1,4 @@
-name: Step 5, Merge your pull request
+name: Step 5, Trigger the workflow
 
 # This step triggers after a pull requst is merged to `main`
 # This step sets STEP to X
@@ -8,9 +8,11 @@ name: Step 5, Merge your pull request
 # Reference https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows:
+      - My Starter Workflow
+    types:
+      - completed
 
 # Reference https://docs.github.com/en/actions/security-guides/automatic-token-authentication
 permissions:
@@ -19,8 +21,8 @@ permissions:
   contents: write
 
 jobs:
-  on_merge:
-    name: On merge
+  on_trigger:
+    name: On trigger
 
     # We will only run this action when:
     # 1. This repository isn't the template repository
@@ -47,4 +49,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           from_step: 5
           to_step: X
-          branch_name: tbd-branch-name
+          branch_name: main
