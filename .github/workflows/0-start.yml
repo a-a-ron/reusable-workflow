@@ -17,6 +17,7 @@ permissions:
   # Need `contents: read` to checkout the repository
   # Need `contents: write` to update the step metadata
   contents: write
+  pull-requests: write
 
 jobs:
   on_start:
@@ -38,7 +39,36 @@ jobs:
         with:
           fetch-depth: 0 # Let's get all the branches
 
-      # TBD-course-set-up
+      # Make a branch, file, commit, and pull request for the learner
+      - name: Prepare a pull request, branch, and file
+        run: |
+          echo "Make sure we are on step 0"
+          if [ "$(cat .github/script/STEP)" != 0 ]
+          then
+            echo "Current step is not 0"
+            exit 0
+          fi
+          
+          echo "Make a branch"
+          BRANCH=reusable-workflow
+          git checkout -b $BRANCH
+          
+          echo "Make a commit"
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit --allow-empty --message="Create an empty commit"
+          
+          echo "Push"
+          git push --set-upstream origin $BRANCH
+          
+          echo "Make a pull request"
+          # Reference https://cli.github.com/manual/gh_pr_create
+          gh pr create --title "Reusable workflow example" --body "Reusable workflow example"
+          
+          echo "Restore main"
+          git checkout main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Update README to close <details id=0> and open <details id=1>
       # and set STEP to '1'
@@ -48,4 +78,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           from_step: 0
           to_step: 1
-          branch_name: tbd-branch-name
+          branch_name: reusable-workflow
