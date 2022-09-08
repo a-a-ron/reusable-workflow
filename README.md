@@ -60,11 +60,26 @@ TBD-step-1-information
 
 **What is _TBD-term-1_**: TBD-definition-1
 
-### :keyboard: Activity: TBD-step-1-name
+### :keyboard: Update the workflow file with the resuable workflow event trigger
 
-1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
-1. TBD-step-1-instructions.
-1. Wait about 20 seconds then refresh this page for the next step.
+1. Open a new browser tab, and navigate to this same repository. Then, work on the steps in your second tab while you read the instructions in this tab.
+1. Navigate to the **Code** tab.
+1. From the **main** branch dropdown, click on the **reusable-workflow** branch.
+1. Navigate to the `.github/workflows/` folder, then select the **reusable-workflow.yml** file.
+1. Replace the `workflow_dispatch` event trigger with the `workflow_call` event trigger. It should look like the following:
+   
+   ```yaml
+      name: Reusable Workflow
+
+      on:
+        workflow_call:
+          inputs:
+            node:
+              required: true
+              type: string
+   ```
+1. To commit your changes, click **Start commit**, and then **Commit changes**.
+1. Wait about 20 seconds for actions to run, then refresh this page (the one you're following instructions from) and an action will automatically close this step and open the next one.
 
 </details>
 
@@ -76,7 +91,7 @@ TBD-step-1-information
 -->
 
 <details id=2>
-<summary><h2>Step 2: Add a job to call the resuable workflow</h2></summary>
+<summary><h2>Step 2: Add a job to call the reusable workflow</h2></summary>
 
 _You did TBD-step-1-name! :tada:_
 
@@ -84,10 +99,21 @@ TBD-step-2-information
 
 **What is _TBD-term-2_**: TBD-definition-2
 
-### :keyboard: Activity: TBD-step-2-name
+### :keyboard: Activity: Add a job to your workflow to call the reusable workflow
 
-1. TBD-step-2-instructions.
-1. Wait about 20 seconds then refresh this page for the next step.
+1. Navigate to the `.github/workflows/` folder and open the `my-starter-workflow.yml` file.
+1. Add a new job to the workflow called `call-reusable-workflow`.
+1. Add a `uses` command and path the command to the `reusable-workflow.yml` file.
+1. Add a `with` command to pass in a `node` paramater and set the value to `14`. 
+
+   ```yaml
+   call-reusable-workflow:
+     uses: ./.github/workflows/reusable-workflow.yml
+     with:
+       node: 14   
+   ```
+1. To commit your changes, click **Start commit**, and then **Commit changes**.
+1. Wait about 20 seconds for actions to run, then refresh this page (the one you're following instructions from) and an action will automatically close this step and open the next one.
 
 </details>
 
@@ -107,10 +133,24 @@ TBD-step-3-information
 
 **What is _TBD-term-3_**: TBD-definition-3
 
-### :keyboard: Activity: TBD-step-3-name
+### :keyboard: Use a matrix strategy to run multiple versions
 
-1. TBD-step-3-instructions.
-1. Wait about 20 seconds then refresh this page for the next step.
+1. In the same `my-starter-workflow.yml` file, add a `strategy` keyword under the `call-reusable-workflow` job.
+1. Under `strategy`, add a `matrix` keyword.
+1. Define the `nodeversion` variable to run over the following versions of node `[14, 16, 18, 20]`.
+1. Replace the hard-coded `node` paramter of 14 used in the `with` command, and call the `nodeversion` in the matrix by using the following syntax `${{ matrix.nodeversion }}.  
+
+   ```yaml
+   call-reusable-workflow:
+     strategy:
+       matrix:
+         nodeversion: [14, 16, 18, 20]
+     uses: ./.github/workflows/reusable-workflow.yml
+     with:
+       node: ${{ matrix.nodeversion }}   
+   ```
+1. To commit your changes, click **Start commit**, and then **Commit changes**.
+1. Wait about 20 seconds for actions to run, then refresh this page (the one you're following instructions from) and an action will automatically close this step and open the next one.
 
 </details>
 
@@ -122,7 +162,7 @@ TBD-step-3-information
 -->
 
 <details id=4>
-<summary><h2>Step 4: Trigger the workflow that calls the reusable workflow</h2></summary>
+<summary><h2>Step 4: Merge your changes and trigger the workflow</h2></summary>
 
 _Nicely done TBD-step-3-name! :partying_face:_
 
@@ -130,10 +170,20 @@ TBD-step-4-information
 
 **What is _TBD-term-4_**: TBD-definition-4
 
-### :keyboard: Activity: TBD-step-4-name
+### :keyboard: Activity 1 : Create and merge your pull request
 
-1. TBD-step-4-instructions.
-1. Wait about 20 seconds then refresh this page for the next step.
+1. In your repo, click on the **Pull requests** tab.
+1. Click on the **Post welcome comment workflow** pull request.
+1. Click **Merge pull request**, then click **Confirm merge**.
+1. Optionally, click **Delete branch** to delete your `reusable-workflow` branch.
+
+### :keyboard: Activity 2 : Run the My Starter Workflow
+
+1. Navigate to the **Actions** tab in your repo.
+1. Choose the **My Starter Workflow** workflow from the left, and select the **Run workflow** button and run the workflow on the **Main** branch.
+1. Refresh the page and then select the **My Starter Workflow** from the workflow runs queue.
+
+Notice the list of build jobs on the left. One for the `build` job and four for the different node versions (14, 16, 18, 20) that you are running from your matrix. When one of the node version jobs complete, you can select that job and view the Actions logs for the **Output the input value**. This will print out the message from the reusable workflow file.
 
 </details>
 
