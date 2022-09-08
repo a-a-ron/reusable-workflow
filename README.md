@@ -166,11 +166,25 @@ Okay, now that we know what the reusable workflow is doing, let's now add a new 
 <details id=3>
 <summary><h2>Step 3: Add a matrix strategy to your workflow</h2></summary>
 
-_Nice work finishing TBD-step-2-name :sparkles:_
+_Well done! :sparkles:_
 
-TBD-step-3-information
+Your **My Starter Workflow** now has a job that outputs the node version of 14 and calls the reusable workflow called **Reusable Workflow**. It then prints a message to the Actions logs of the node version for the build. Now, we haven't checked the Actions logs at the point to see the message, but don't worry, we'll get there after this next step. Let's improve our **My Starter Workflow** a little more but adding a matrix strategy. 
+  
+**What is a matrix strategy**: A matrix strategy lets you use variables in a single job definition to automatically create multiple job runs that are based on the combinations of the variables. For example, you can use a matrix strategy to test your code in multiple versions of a language or on multiple operating systems. Below is an example:
 
-**What is _TBD-term-3_**: TBD-definition-3
+```yaml
+jobs:
+  example_matrix:
+    strategy:
+      matrix:
+        version: [10, 12, 14]
+        os: [ubuntu-latest, windows-latest]
+```
+To define a matrix strategy inside a job, you first need to define the matrix with the keyword `strategy` followed by the nested keyword `matrix`. You can then define variables for the matrix. In the above example, the variables are `version` with the values of `10, 12, and 14`, and another variable called `os` with the values of `ubuntu-latest and windows latest`. 
+  
+The `example_matrix` job will run for each possible combination of the variables. So, in the above example, the workflow will run six jobs, one for each combination of the os and version variables. If you want to run a job for multiple versions, using a matrix strategy is a great solution over writing out 6 different jobs. 
+  
+Let's add a matrix strategy to the **My Starter Workflow** so we can run our job on different versions of node instead of the hard-coded single verison of 14.
 
 ### :keyboard: Use a matrix strategy to run multiple versions
 
