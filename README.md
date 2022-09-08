@@ -173,7 +173,7 @@ You can now [merge](https://docs.github.com/en/get-started/quickstart/github-glo
 ### :keyboard: Activity 1 : Create and merge your pull request
 
 1. In your repo, click on the **Pull requests** tab.
-1. Click on the **Post welcome comment workflow** pull request.
+1. Click on the **Reusable workflow example** pull request.
 1. Click **Merge pull request**, then click **Confirm merge**.
 1. Optionally, click **Delete branch** to delete your `reusable-workflow` branch.
 1. Wait about 20 seconds for actions to run, then refresh this page (the one you're following instructions from) and an action will automatically close this step and open the next one.
