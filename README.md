@@ -22,13 +22,13 @@ _Make a workflow reusable, call it in another workflow, and use a matrix strateg
 
 <!--step0-->
 
-TBD-welcome-paragraph
+Reusable workflows offer a simple and powerful way to avoid copying and pasting workflows across your repositories, and adding a matrix strategy lets you use variables in a single job definition to automatically create multiple job runs. 
 
-- **Who is this for**: TBD-audience.
-- **What you'll learn**: TBD-objective.
-- **What you'll build**: TBD-result.
-- **Prerequisites**: TBD-prerequisites.
-- **How long**: This course is TBD-step-count steps long and takes less than TBD-duration to complete.
+- **Who is this for**: Developers, DevOps engineers, students, managers, teams, GitHub users.
+- **What you'll learn**: How to create and use reusable workflows, create a matrix strategy, trigger workflows, and find workflow logs.
+- **What you'll build**: An Actions workflow with a matrix strategy that calls a reusable workflow to output multiple verisions of node. 
+- **Prerequisites**: In this course you will work with issues and pull requests, as well as edit files. We recommend you take the [Introduction to GitHub](https://github.com/skills/introduction-to-github) course first.
+- **How long**: This course is five steps long and can be finished in less than one hour.
 
 ## How to start this course
 
@@ -54,13 +54,21 @@ TBD-welcome-paragraph
 <details id=1>
 <summary><h2>Step 1: Make a workflow reusable</h2></summary>
 
-_Welcome to "TBD-course-name"! :wave:_
+_Welcome to "Reusable Workflows and Matrix Strategies"! :wave:_
 
-TBD-step-1-information
+You can do a lot with GitHub Actions! You can automate repetitive tasks, build continuous integration and continuous deployment pipelines, and customize essentially any part of your software development workflow. It doesn't matter if you're just learning about workflows and GitHub Actions for the first time or you're well exerpienced with the process, you'll quickly find yourself repeating automation jobs and steps within the same workflow, and even using the dreaded copy and paste method for workflows across multiple repositories. 
 
-**What is _TBD-term-1_**: TBD-definition-1
+Is there a solution to reduce these repetitive tasks? Yes, I'm glad you asked :wink: Enter **reusable workflows**, a simple and powerful way to avoid copying and pasting workflows across your repositories.
 
-### :keyboard: Update the workflow file with the resuable workflow event trigger
+**What are the benefits of using reusable workflows?**: Reusable workflows are … reusable. Reusable workflows let you DRY (don’t repeat yourself) your Actions configurations, so you don’t need to copy and paste your workflows from one repository to another.
+
+- Case in point: if you have three different Node applications and you’re building them all the same way, you can use one reusable workflow instead of copying and pasting your workflows again and again.
+
+**I have a workflow, how do I make it reusable?**: A reusable workflow is just like any GitHub Actions workflow with one key difference: it includes a `workflow_call` event trigger, similar to event triggers like `push`, `issues`, and `workflow_dispatch`. This means that all you need to do to make a workflow reusable is to use the workflow call trigger. 
+
+Let's get started with our first step to see how this would work! 
+
+### :keyboard: Activity: Add a `workflow_call` trigger to a workflow
 
 1. Open a new browser tab, and navigate to this same repository. Then, work on the steps in your second tab while you read the instructions in this tab.
 1. Navigate to the **Code** tab.
