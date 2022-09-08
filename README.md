@@ -186,7 +186,7 @@ The `example_matrix` job will run for each possible combination of the variables
   
 Let's add a matrix strategy to the **My Starter Workflow** so we can run our job on different versions of node instead of the hard-coded single verison of 14.
 
-### :keyboard: Use a matrix strategy to run multiple versions
+### :keyboard: Activity: Use a matrix strategy to run multiple versions
 
 1. In the same `my-starter-workflow.yml` file, add a `strategy` keyword under the `call-reusable-workflow` job.
 1. Under `strategy`, add a `matrix` keyword.
@@ -223,7 +223,7 @@ You've added a matrix strategy to your workflow file that is now running on four
 
 You may not have noticed yet, but I've opened up a pull request called **Reusable workflow example** that is linked to the branch you've been making your file changes to (**reusable-workflow**). Let's navigate to this pull request and merge it so that your workflow file changes will be part of the `main` branch.
 
-### :keyboard: Activity 1 : Create and merge your pull request
+### :keyboard: Activity: Create and merge your pull request
 
 1. In your repo, click on the **Pull requests** tab.
 1. Click on the **Reusable workflow example** pull request.
@@ -252,7 +252,7 @@ Now that the changes have been merged into the `main` branch, let's trigger the 
   - We should also expect to see the echo message printed as an output from the reusable workflow with the node version for each of the matrix version jobs. 
     ![Screen Shot 2022-09-08 at 9 52 41 AM](https://user-images.githubusercontent.com/6351798/189220620-0576540a-366f-44e1-866c-2955af399cdb.png)
 
-### :keyboard: Activity 2 : Run the My Starter Workflow and view the Actions logs
+### :keyboard: Activity: Run the My Starter Workflow and view the Actions logs
 
 1. Navigate to the **Actions** tab in your repo.
 1. Choose the **My Starter Workflow** workflow from the left, and select the **Run workflow** button and run the workflow on the **Main** branch.
