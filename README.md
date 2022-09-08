@@ -29,6 +29,7 @@ Reusable workflows offer a simple and powerful way to avoid copying and pasting 
 - **What you'll build**: An Actions workflow with a matrix strategy that calls a reusable workflow to output multiple verisions of node. 
 - **Prerequisites**: In this course you will work with issues and pull requests, as well as edit files. We recommend you take the [Introduction to GitHub](https://github.com/skills/introduction-to-github) course first.
 - **How long**: This course is five steps long and can be finished in less than one hour.
+- **Attribution**: This Skills course was inspirired by a [demo video](https://www.youtube.com/watch?v=MBpyouQtY_M) created by Mickey Gousset `@mickeygousset`
 
 ## How to start this course
 
