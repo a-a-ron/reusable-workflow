@@ -1,4 +1,4 @@
-name: Step 2, TBD-step-2-name
+name: Step 2, Add a job
 
 # This step triggers after TBD-step-2-event-desc
 # This step sets STEP to 3
@@ -8,7 +8,9 @@ name: Step 2, TBD-step-2-name
 # Reference https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
-  TBD-step-2-event:
+  push:
+    branches:
+      - reusable-workflow
 
 # Reference https://docs.github.com/en/actions/security-guides/automatic-token-authentication
 permissions:
@@ -17,8 +19,8 @@ permissions:
   contents: write
 
 jobs:
-  on_TBD-step-2-event:
-    name: On TBD-step-2-event
+  on_add_job:
+    name: On add job
 
     # We will only run this action when:
     # 1. This repository isn't the template repository
@@ -36,7 +38,12 @@ jobs:
         with:
           fetch-depth: 0 # Let's get all the branches
 
-      # TBD-step-2-additional-steps
+      # Verify the learner added the file contents
+      - name: Check workflow contents, jobs
+        run: ./.github/script/check-file.sh
+        env:
+          FILE: ".github/workflows/my-starter-workflow.yml"
+          SEARCH: "uses: ./.github/workflows/reusable-workflow.yml"
 
       # Update README to close <details id=2> and open <details id=3>
       # and set STEP to '3'
@@ -46,4 +53,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           from_step: 2
           to_step: 3
-          branch_name: tbd-branch-name
+          branch_name: reusable-workflow
