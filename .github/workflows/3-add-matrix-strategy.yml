@@ -39,7 +39,7 @@ jobs:
           fetch-depth: 0 # Let's get all the branches
 
       # Verify the learner added the file contents
-      - name: Check workflow contents, jobs
+      - name: Check workflow contents, matrix strategy
         run: ./.github/script/check-file.sh
         env:
           FILE: ".github/workflows/my-starter-workflow.yml"
