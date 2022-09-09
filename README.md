@@ -192,7 +192,7 @@ Let's add a matrix strategy to the **My Starter Workflow** so we can run our job
 1. In the same `my-starter-workflow.yml` file, add a `strategy` keyword under the `call-reusable-workflow` job.
 1. Under `strategy`, add a `matrix` keyword.
 1. Define the `nodeversion` variable to run over the following versions of node `[14, 16, 18, 20]`.
-1. Replace the hard-coded `node` paramter of 14 used in the `with` command, and call the `nodeversion` in the matrix by using the following syntax `${{ matrix.nodeversion }}.  
+1. Replace the hard-coded `node` paramter of 14 used in the `with` command, and call the `nodeversion` in the matrix by using the following syntax `${{ matrix.nodeversion }}`. Below is that your job should look like:
 
    ```yaml
    call-reusable-workflow:
