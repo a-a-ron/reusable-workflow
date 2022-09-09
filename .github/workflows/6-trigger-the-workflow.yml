@@ -1,6 +1,6 @@
 name: Step 5, Trigger the workflow
 
-# This step triggers after a pull requst is merged to `main`
+# This step triggers after a pull request is merged to `main`
 # This step sets STEP to X
 # This step closes <details id=5> and opens <details id=X>
 
