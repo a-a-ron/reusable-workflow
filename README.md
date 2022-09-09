@@ -257,9 +257,11 @@ Now that the changes have been merged into the `main` branch, let's trigger the 
 
 1. Navigate to the **Actions** tab in your repo.
 1. Choose the **My Starter Workflow** workflow from the left, and select the **Run workflow** button and run the workflow on the **Main** branch.
-1. Refresh the page and then select the **My Starter Workflow** from the workflow runs queue.
+1. Wait a few seconds for the workflow run to appear in the queue. Once it shows, select the **My Starter Workflow** from the workflow runs queue.
 
 Notice the list of build jobs on the left. One for the `build` job and four for the different node versions (14, 16, 18, 20) that you are running from your matrix. When one of the node version jobs complete, you can select that job and view the Actions logs for the **Output the input value**. This will print out the message from the reusable workflow file.
+  
+When you're done reviewing the Actions logs, return here and refresh the page to finish the course! 🎉
 
 
 
